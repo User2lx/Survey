@@ -140,13 +140,13 @@
     <div class="size">
       <span>Version</span>
       <ul class="list-size">
-        <li class="item-list"><button class="item-list-button" onclick="alert('Not done')">1</button></li>
-        <li class="item-list"><button class="item-list-button" onclick="alert('Not done')">1.5</button></li>
-        <li class="item-list"><button class="item-list-button" onclick="alert('Not done')">2</button></li>
+        <li class="item-list"><button class="item-list-button" onclick="downloadFile('v1')">1</button></li>
+        <li class="item-list"><button class="item-list-button" onclick="notDone()">1.5</button></li>
+        <li class="item-list"><button class="item-list-button" onclick="notDone()">2</button></li>
       </ul>
     </div>
     <div class="action">
-      <button type="button" class="button" onclick="downloadFile()">
+      <button type="button" class="button" onclick="downloadFile('v1')">
         <span class="button__text">Download</span>
         <span class="button__icon">
           <svg class="svg" data-name="Layer 2" id="bdd05811-e15d-428c-bb53-8661459f9307" viewBox="0 0 35 35" xmlns="http://www.w3.org/2000/svg">
@@ -158,9 +158,24 @@
       </button>
     </div>
   </div>
+
   <script>
-    function downloadFile() {
-      window.location.href = "https://github.com/yourusername/yourrepo/raw/main/v1.bat";  // Replace with the actual file URL
+    // Function to download the file
+    function downloadFile(version) {
+      if (version === 'v1') {
+        // Trigger file download for v1.bat
+        const link = document.createElement('a');
+        link.href = 'https://github.com/yourusername/yourrepo/raw/main/v1.bat';  // Replace with the actual file URL
+        link.download = 'v1.bat';
+        link.click();
+      } else {
+        alert('Not done');
+      }
+    }
+
+    // Handle "Not done" versions
+    function notDone() {
+      alert('Not done');
     }
   </script>
 </body>
