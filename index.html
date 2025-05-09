@@ -1,52 +1,167 @@
-<!-- Survey Download Page with Neon Dark Blue Theme -->
-<div class="card">
-  <div class="image_container">
-    <svg class="image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      <path
-        d="M20 5H4V19L13.2923 9.70649C13.6828 9.31595 14.3159 9.31591 14.7065 9.70641L20 15.0104V5ZM2 3.9934C2 3.44476 2.45531 3 2.9918 3H21.0082C21.556 3 22 3.44495 22 3.9934V20.0066C22 20.5552 21.5447 21 21.0082 21H2.9918C2.44405 21 2 20.5551 2 20.0066V3.9934ZM8 11C6.89543 11 6 10.1046 6 9C6 7.89543 6.89543 7 8 7C9.10457 7 10 7.89543 10 9C10 10.1046 9.10457 11 8 11Z"
-      ></path>
-    </svg>
-  </div>
-  <div class="title">
-    <span>Survey</span>
-  </div>
-  <div class="size">
-    <span>version</span>
-    <ul class="list-size">
-      <li class="item-list"><button class="item-list-button" onclick="alert('Not done')">1</button></li>
-      <li class="item-list"><button class="item-list-button" onclick="alert('Not done')">1.5</button></li>
-      <li class="item-list"><button class="item-list-button" onclick="alert('Not done')">2</button></li>
-    </ul>
-  </div>
-  <div class="action">
-    <button type="button" class="button" onclick="downloadFile()">
-      <span class="button__text">Download</span>
-      <span class="button__icon">
-        <svg
-          class="svg"
-          data-name="Layer 2"
-          id="bdd05811-e15d-428c-bb53-8661459f9307"
-          viewBox="0 0 35 35"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M17.5,22.131a1.249,1.249,0,0,1-1.25-1.25V2.187a1.25,1.25,0,0,1,2.5,0V20.881A1.25,1.25,0,0,1,17.5,22.131Z"
-          ></path>
-          <path
-            d="M17.5,22.693a3.189,3.189,0,0,1-2.262-.936L8.487,15.006a1.249,1.249,0,0,1,1.767-1.767l6.751,6.751a.7.7,0,0,0,.99,0l6.751-6.751a1.25,1.25,0,0,1,1.768,1.767l-6.752,6.751A3.191,3.191,0,0,1,17.5,22.693Z"
-          ></path>
-          <path
-            d="M31.436,34.063H3.564A3.318,3.318,0,0,1,.25,30.749V22.011a1.25,1.25,0,0,1,2.5,0v8.738a.815.815,0,0,0,.814.814H31.436a.815.815,0,0,0,.814-.814V22.011a1.25,1.25,0,1,1,2.5,0v8.738A3.318,3.318,0,0,1,31.436,34.063Z"
-          ></path>
-        </svg>
-      </span>
-    </button>
-  </div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Survey</title>
+  <style>
+    /* Dark Blue Neon Layout */
+    body {
+      background-color: #010b1b; /* Dark background for the page */
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
 
-<script>
-  function downloadFile() {
-    // Link to download the file from GitHub
-    window.location.href = "https://github.com/yourusername/yourrepo/raw/main/v1.bat";
-  }
-</script>
+    .card {
+      background-color: #001f3d; /* Dark Blue background for the card */
+      padding: 20px;
+      width: 320px;
+      border-radius: 15px;
+      box-shadow: 0px 0px 20px 5px rgba(0, 255, 204, 0.7); /* Neon green glow */
+      text-align: center;
+      color: white;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0px 0px 30px 5px rgba(0, 255, 204, 0.9);
+    }
+
+    .image_container {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto;
+      background-color: #00ffcc; /* Neon Green */
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0px 0px 15px rgba(0, 255, 204, 0.6);
+    }
+
+    .image {
+      width: 50px;
+      fill: white;
+    }
+
+    .title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #00ffcc;
+      margin-top: 20px;
+    }
+
+    .size {
+      margin-top: 20px;
+      font-size: 1rem;
+    }
+
+    .list-size {
+      list-style: none;
+      padding: 0;
+    }
+
+    .item-list {
+      margin: 10px 0;
+    }
+
+    .item-list-button {
+      background-color: #001f3d;
+      border: 2px solid #00ffcc;
+      color: #00ffcc;
+      font-size: 1rem;
+      padding: 10px;
+      border-radius: 5px;
+      width: 100%;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .item-list-button:hover {
+      background-color: #00ffcc;
+      color: #001f3d;
+    }
+
+    .action {
+      margin-top: 20px;
+    }
+
+    .button {
+      background-color: #00ffcc;
+      border: 2px solid #00ffcc;
+      padding: 12px 20px;
+      font-size: 1.25rem;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      color: #001f3d;
+      font-weight: bold;
+    }
+
+    .button:hover {
+      background-color: #009966;
+      border-color: #009966;
+      color: white;
+    }
+
+    .button__icon {
+      margin-left: 10px;
+      width: 20px;
+      fill: #001f3d;
+    }
+
+    .svg {
+      width: 20px;
+      fill: #fff;
+    }
+
+    .button__text {
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="image_container">
+      <svg class="image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M20 5H4V19L13.2923 9.70649C13.6828 9.31595 14.3159 9.31591 14.7065 9.70641L20 15.0104V5ZM2 3.9934C2 3.44476 2.45531 3 2.9918 3H21.0082C21.556 3 22 3.44495 22 3.9934V20.0066C22 20.5552 21.5447 21 21.0082 21H2.9918C2.44405 21 2 20.5551 2 20.0066V3.9934ZM8 11C6.89543 11 6 10.1046 6 9C6 7.89543 6.89543 7 8 7C9.10457 7 10 7.89543 10 9C10 10.1046 9.10457 11 8 11Z"></path>
+      </svg>
+    </div>
+    <div class="title">
+      <span>Survey</span>
+    </div>
+    <div class="size">
+      <span>Version</span>
+      <ul class="list-size">
+        <li class="item-list"><button class="item-list-button" onclick="alert('Not done')">1</button></li>
+        <li class="item-list"><button class="item-list-button" onclick="alert('Not done')">1.5</button></li>
+        <li class="item-list"><button class="item-list-button" onclick="alert('Not done')">2</button></li>
+      </ul>
+    </div>
+    <div class="action">
+      <button type="button" class="button" onclick="downloadFile()">
+        <span class="button__text">Download</span>
+        <span class="button__icon">
+          <svg class="svg" data-name="Layer 2" id="bdd05811-e15d-428c-bb53-8661459f9307" viewBox="0 0 35 35" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.5,22.131a1.249,1.249,0,0,1-1.25-1.25V2.187a1.25,1.25,0,0,1,2.5,0V20.881A1.25,1.25,0,0,1,17.5,22.131Z"></path>
+            <path d="M17.5,22.693a3.189,3.189,0,0,1-2.262-.936L8.487,15.006a1.249,1.249,0,0,1,1.767-1.767l6.751,6.751a.7.7,0,0,0,.99,0l6.751-6.751a1.25,1.25,0,0,1,1.768,1.767l-6.752,6.751A3.191,3.191,0,0,1,17.5,22.693Z"></path>
+            <path d="M31.436,34.063H3.564A3.318,3.318,0,0,1,.25,30.749V22.011a1.25,1.25,0,0,1,2.5,0v8.738a.815.815,0,0,0,.814.814H31.436a.815.815,0,0,0,.814-.814V22.011a1.25,1.25,0,1,1,2.5,0v8.738A3.318,3.318,0,0,1,31.436,34.063Z"></path>
+          </svg>
+        </span>
+      </button>
+    </div>
+  </div>
+  <script>
+    function downloadFile() {
+      window.location.href = "https://github.com/yourusername/yourrepo/raw/main/v1.bat";  // Replace with the actual file URL
+    }
+  </script>
+</body>
+</html>
